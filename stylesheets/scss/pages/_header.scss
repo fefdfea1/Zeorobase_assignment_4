@@ -1,0 +1,326 @@
+.container{
+
+    .login_bar{
+    width: 100%;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-gray-100;
+    padding: 5px 8px 6px;
+    box-sizing: border-box;
+
+
+    .max_area{
+        width: 1020px;
+        ul{
+          display: flex;
+
+
+          li{
+            margin-right: 8px;
+          }
+          li:nth-of-type(1){
+            order: 3;
+          }
+          li:nth-of-type(2){
+            order: 4;
+          }
+          li:nth-of-type(3){
+            margin-right: 0;
+            order: 5;
+          }
+          li:nth-of-type(4){
+            order: 1;
+          }
+          li:nth-of-type(5){
+            order: 2;
+            margin-right: auto;
+          }
+
+          }
+        }
+    }
+
+    .grid_bx{
+      display: grid;
+      justify-content: center;
+      align-items: flex-end;
+      grid-template-columns: 110px 216px 546px 90.94px 45.47px;
+      grid-template-rows: 32px 58px 26px ;
+      grid-template-areas: 
+      "category . . . ."
+      "category logo searchBox userIcon cart"
+      "category productKeyWord productKeyWord productKeyWord .";
+    }
+
+    .button--category{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background-color: $color-blue-600;
+      background-image: url('../../../assets/icon/hamburger.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      grid-area: category;
+    }
+
+    .button--category p{
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      color: $color-white;
+      text-decoration: line-through;
+      transform: translate(-50%, -50%);
+    }
+    .logo{
+      width: 176px;
+      height: 40px;
+      justify-self: end;
+      align-self: center;
+      grid-area: logo;
+    }
+
+
+    .searchForm{
+      width: 516px;
+      height: 40px;
+      display: flex;
+      justify-self: end;
+      align-self: center;
+      border: 1px solid $color-blue-600;
+      grid-area: searchBox;
+
+      .selectBox{
+        position: relative;
+      }
+
+      .productSelect{
+        width: 135px;
+        height: 100%;
+        color: $color-gray-700;
+        padding: 10px;
+        border: 0;
+        border-right: 1px solid $color-gray-100;
+        -webkit-appearance:none; /* 크롬 화살표 없애기 */
+        -moz-appearance:none; /* 파이어폭스 화살표 없애기 */
+        appearance:none /* 화살표 없애기 */
+      }
+
+      .selectBox svg{
+        position: absolute;
+        top: 50%;
+        right: 17px;
+        transform: translate(-50%,-50%);
+      }
+
+      .searchInput{
+        width: 301px;
+        height: 100%;
+        padding: 10px;
+        border: 0;
+      }
+
+        .searchInput::placeholder{
+          color: $color-gray-600;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14.4px;
+        }
+      button{
+        width: 40px;
+        height: 40px;
+      }
+      
+    }
+
+    .myCoupang{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background-image: url('../../../assets/icon/my-coupang.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 23%;
+      margin-left: 23px;
+      grid-area: userIcon;
+    }
+
+    .myCoupang button{
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: flex-end;
+    }
+
+    .myCoupang ul{
+      width: 90px;
+      height: auto;
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 10px;
+      z-index: 100;
+      padding: 5px 11px;
+      border: $color-gray-300 solid 1px;
+      margin-top: 6.8px;
+    }
+
+    .myCoupang.is--active ul{
+      display: block;
+    }
+
+    .myCoupang ul::after{
+      content: '';
+      width: 0;
+      display: block;
+      position: absolute;
+      top: -8px;
+      left: 38px;
+      z-index: 1;
+      border-color: $color-gray-300 transparent;
+      border-style: solid;
+      border-width: 0 6px 8px 6.5px;
+    }
+
+    .myCoupang ul::before{
+      content: '';
+      width: 0;
+      display: block;
+      position: absolute;
+      top: -8px;
+      left: 38px;
+      z-index: 0;
+      border-color: $color-gray-300 transparent;
+      border-style: solid;
+      border-width: 0 6px 8px 6.5px;
+    }
+
+    .myCoupang ul li{
+      margin-top: 20px;
+    }
+    .myCoupang ul li:last-child{
+      margin-bottom: 20px;
+    }
+
+    .myCoupang ul li a{
+      text-align: center;
+    }
+
+    .cart{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background-image: url('../../../assets/icon/cart.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 23%;
+      margin-left: 30px;
+      grid-area: cart;
+    }
+    
+    .cart::before{
+      content: "0";
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      top: -5px;
+      right: -9px;
+      text-align: center;
+      color: $color-white;
+      background-color: $color-blue-600;
+      padding: 3px;
+      border-radius: 50%;
+      box-sizing: content-box;
+    }
+
+    .cart button{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      white-space: nowrap;
+    }
+    
+
+    .cart ul{
+      width: 291px;
+      height: 99px;
+      display: none;
+      position: absolute;
+      top: 68px;
+      right: 0;
+      z-index: 0;
+      border: 1px solid $color-gray-300;
+    }
+
+    .cart ul.cart--empty{
+      display: block;
+    }
+
+    .cart ul li{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .cart.cart--empty ul{
+      display: block;
+    }
+
+    .cart ul::before{
+      content: "";
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: -6px;
+      right: 12px;
+      z-index: 1;
+      transform: rotate(45deg);
+      border-top: 1px solid $color-gray-300;
+      border-left: 1px solid $color-gray-300;
+    }
+
+
+    .cart ul::after{
+      content: "";
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: -6px;
+      right: 12px;
+      z-index: 3;;
+      background-color: $color-white;
+      transform: rotate(45deg);
+      border-top: 1px solid $color-gray-300;
+      border-left: 1px solid $color-gray-300;
+    }
+
+    .productKeyword{
+      width: 100%;
+      height: 100%;
+      grid-area: productKeyWord;
+      margin-left: 15px;
+    }
+
+    .productKeyword ul{
+      font-size: 0;
+    }
+
+    .productKeyword ul li{
+      width: 91px;
+      height: 26px;
+      display: inline-block;
+      text-align: center;
+      margin-left: -6px;
+    }
+
+    .productKeyword ul li a{
+      white-space: nowrap;
+      padding: 6px 14px;
+    }
+}
+
